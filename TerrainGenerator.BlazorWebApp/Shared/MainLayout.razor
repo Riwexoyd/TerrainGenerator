@@ -1,10 +1,23 @@
-﻿@inherits LayoutComponentBase
+﻿@using TerrainGenerator.Models
 
-<Layout>
-    <Header>
-    </Header>
-    <Layout>
-        <Content>@Body</Content>
-        <Sider>right sidebar</Sider>
+@inherits LayoutComponentBase
+
+<CascadingValue Value="workSpace">
+    <Layout Style="">
+        <Header>
+        </Header>
+        <Layout>
+            <Content>@Body</Content>
+            <Sider Theme="SiderTheme.Light">
+                <LayerPanel />
+            </Sider>
+        </Layout>
     </Layout>
-</Layout>
+</CascadingValue>
+
+@code {
+    private WorkSpaceModel workSpace = new WorkSpaceModel
+    {
+        CurrentTerrain = new TerrainModel(new Terrain(256, 256))
+    };
+}

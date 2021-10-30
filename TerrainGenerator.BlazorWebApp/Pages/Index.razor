@@ -1,1 +1,22 @@
-﻿@page "/"
+﻿@using Blazor.Extensions.Canvas.Canvas2D 
+@using Blazor.Extensions 
+
+@page "/"
+
+<BECanvas Width="WorkSpace.CurrentTerrain.Columns" Height="WorkSpace.CurrentTerrain.Rows" @ref="_canvasReference"></BECanvas>
+
+@code {
+    private Canvas2DContext _context;
+
+    protected BECanvasComponent _canvasReference;
+
+    [CascadingParameter]
+    protected WorkSpaceModel WorkSpace { get; set; }
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        this._context = await this._canvasReference.CreateCanvas2DAsync();
+        // https://forums.asp.net/t/2173236.aspx?How+do+I+draw+a+dynamically+created+image+on+the+Blazor+Canvas+
+    }
+}
