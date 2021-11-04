@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerrainGenerator", "Terrain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerrainGenerator.BlazorWebApp", "TerrainGenerator.BlazorWebApp\TerrainGenerator.BlazorWebApp.csproj", "{68413E4A-A7F0-43D7-A4F6-864641E8A0D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerrainGenerator.Utils", "TerrainGenerator.Utils\TerrainGenerator.Utils.csproj", "{5D209310-2448-4559-98A0-8CC352A88613}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{68413E4A-A7F0-43D7-A4F6-864641E8A0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68413E4A-A7F0-43D7-A4F6-864641E8A0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68413E4A-A7F0-43D7-A4F6-864641E8A0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D209310-2448-4559-98A0-8CC352A88613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D209310-2448-4559-98A0-8CC352A88613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D209310-2448-4559-98A0-8CC352A88613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D209310-2448-4559-98A0-8CC352A88613}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
