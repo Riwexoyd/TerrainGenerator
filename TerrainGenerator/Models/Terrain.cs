@@ -1,17 +1,17 @@
 ﻿namespace TerrainGenerator.Models
 {
-    public sealed class Terrain : ITerrain
+    public sealed class Terrain : ITerrain, IGroupLayer
     {
         private readonly IGroupLayer _groupLayer;
 
-        public int Rows { get; }
+        public int Height { get; }
 
-        public int Columns { get; }
+        public int Width { get; }
 
         public Terrain(int rows, int columns)
         {
-            Rows = rows;
-            Columns = columns;
+            Height = rows;
+            Width = columns;
             _groupLayer = new GroupLayer();
         }
 

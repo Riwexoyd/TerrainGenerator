@@ -1,9 +1,9 @@
 ﻿namespace TerrainGenerator.Models
 {
-    public interface ITerrain : IGroupLayer
+    public interface ITerrain : ILayer
     {
-        int Rows { get; }
+        int Height { get; }
 
-        int Columns { get; }
+        int Width { get; }
     }
 }

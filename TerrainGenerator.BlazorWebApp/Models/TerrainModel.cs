@@ -16,9 +16,9 @@ namespace TerrainGenerator.BlazorWebApp.Models
             _terrain = terrain;
         }
 
-        public int Columns => _terrain.Columns;
+        public int Columns => _terrain.Width;
 
-        public int Rows => _terrain.Rows;
+        public int Rows => _terrain.Height;
 
 
     }
