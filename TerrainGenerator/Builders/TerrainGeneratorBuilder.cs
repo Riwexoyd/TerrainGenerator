@@ -39,16 +39,23 @@ namespace TerrainGenerator.Builders
             return this;
         }
 
-        public TerrainGeneratorBuilder AddLayer(ITerrainLayerGenerator layer)
+        public TerrainGeneratorBuilder AddLayer(ITerrainLayerGenerator layer, IOperation operation)
         {
-            terrainGenerator.TerrainGeneratorLayers.Add(layer);
+            terrainGenerator.TerrainGeneratorLayers.Add((layer, operation));
 
             return this;
         }
 
         public TerrainGeneratorBuilder RemoveLayer(ITerrainLayerGenerator layer)
         {
-            terrainGenerator.TerrainGeneratorLayers.Remove(layer);
+            for (var i = 0; i < terrainGenerator.TerrainGeneratorLayers.Count; ++i)
+            {
+                if (terrainGenerator.TerrainGeneratorLayers[i].generator.Equals(layer))
+                {
+                    terrainGenerator.TerrainGeneratorLayers.RemoveAt(i);
+                    break;
+                }
+            }
 
             return this;
         }
