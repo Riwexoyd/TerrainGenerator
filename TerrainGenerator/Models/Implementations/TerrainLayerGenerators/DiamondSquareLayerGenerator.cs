@@ -37,13 +37,13 @@ namespace TerrainGenerator.Models.Implementations.TerrainLayerGenerators
         private void Diamond(Random random, Layer layer, int leftX, int leftY, int rightX, int rightY, int mid, float r)
         {
             layer[leftY + mid, leftX + mid] = (layer[rightY, rightX] + layer[leftY, leftX] + layer[rightY, leftX]
-                + layer[leftY, rightX]) * 0.25f + random.GetRange(r);
+                + layer[leftY, rightX]) * 0.25f + random.NextRange(r);
         }
 
         private void Square(Random random, Layer layer, int x, int y, int mid, float r)
         {
             layer[y, x] = (layer[y, x - mid] + layer[y, x + mid]
-                    + layer[y + mid, x] + layer[y - mid, x]) * 0.25f + random.GetRange(r);
+                    + layer[y + mid, x] + layer[y - mid, x]) * 0.25f + random.NextRange(r);
         }
 
         private void SetVertexRandomValue(Layer layer, Random random)
@@ -52,7 +52,7 @@ namespace TerrainGenerator.Models.Implementations.TerrainLayerGenerators
             {
                 for (int x = 0; x < layer.Width; x += layer.Width - 1)
                 {
-                    layer[y, x] = 0.5f + random.GetRange(0.5f);
+                    layer[y, x] = 0.5f + random.NextRange(0.5f);
                 }
             }
         }
