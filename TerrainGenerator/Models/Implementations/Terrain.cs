@@ -20,5 +20,19 @@
                 return _layer[row, column];
             }
         }
+
+        public float[,] GetHeightMap()
+        {
+            var result = new float[Height, Width];
+            for (var y = 0; y < Height; ++y)
+            {
+                for (var x = 0; x < Width; ++x)
+                {
+                    result[y, x] = _layer[x, y];
+                }
+            }
+
+            return result;
+        }
     }
 }

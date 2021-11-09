@@ -2,5 +2,6 @@
 {
     public interface ITerrain : ILayer
     {
+        float[,] GetHeightMap();
     }
 }
