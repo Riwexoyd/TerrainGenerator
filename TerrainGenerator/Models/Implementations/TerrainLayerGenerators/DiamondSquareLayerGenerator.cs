@@ -4,7 +4,7 @@ using TerrainGenerator.Extensions;
 
 namespace TerrainGenerator.Models.Implementations.TerrainLayerGenerators
 {
-    internal sealed class DiamondSquareLayerGenerator : ITerrainLayerGenerator
+    public sealed class DiamondSquareLayerGenerator : ITerrainLayerGenerator
     {
         public float Roughness { get; set; } = 0.5f;
 

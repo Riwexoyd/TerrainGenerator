@@ -6,7 +6,7 @@ using TerrainGenerator.Helpers;
 
 namespace TerrainGenerator.Models.Implementations.TerrainLayerGenerators
 {
-    internal sealed class WorleyNoiseLayerGenerator : ITerrainLayerGenerator
+    public sealed class WorleyNoiseLayerGenerator : ITerrainLayerGenerator
     {
         public int GridSize { get; set; } = 1;
 
@@ -14,7 +14,7 @@ namespace TerrainGenerator.Models.Implementations.TerrainLayerGenerators
 
         public float Radius { get; set; } = 1;
 
-        public bool RandomCellPointCount { get; set; } = false;
+        public bool RandomizeCellPointCount { get; set; } = false;
 
         public WorleyNoiseMetricType MetricType { get; set; } = WorleyNoiseMetricType.Euclid;
 
@@ -42,7 +42,7 @@ namespace TerrainGenerator.Models.Implementations.TerrainLayerGenerators
 
         private Func<int> GetPointCountFunc(Random random)
         {
-            if (RandomCellPointCount)
+            if (RandomizeCellPointCount)
             {
                 return () => random.Next(CellPointCount + 1);
             }
